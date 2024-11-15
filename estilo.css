@@ -1,0 +1,352 @@
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #150016;
+    color: white;
+  }
+  
+  /* Pantallas */
+  .pantalla {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  
+  .pantalla.active {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  /* Textos y encabezados */
+  h1, p {
+    margin: 10px 20px;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 1rem;
+    background-color: #29104A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #522C5D;
+  }
+  
+  /* Fondos específicos para cada pantalla */
+  .fondo-montañas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #29104A, #522C5D);
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+ /* Montañas en el fondo */
+.montana {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-bottom: 300px solid #29104A;
+    transform: translateX(-50%);
+  }
+  
+  /* Punta de nieve en las montañas */
+  .punta-nieve {
+    position: absolute;
+    top: -10px; /* Ajuste para que se coloque en la punta */
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 50px solid rgba(255, 255, 255, 0.829);
+    transform: translateX(-50%);
+  }
+  
+  /* Montaña 1 */
+  .montana-1 {
+    left: 25%;
+    border-bottom-color: #3d2a5e;
+  }
+  
+  /* Montaña 2 (más alta) */
+  .montana-2 {
+    left: 50%;
+    border-bottom-color: #261f4a;
+    border-bottom-width: 350px;
+  }
+  
+  /* Montaña 3 (más baja) */
+  .montana-3 {
+    left: 75%;
+    border-bottom-color: #150016;
+    border-bottom-width: 250px;
+  }
+  
+  /* Estrellas pequeñas en el fondo */
+  .estrella-montana {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: parpadeo-montana 2s infinite alternate;
+  }
+  
+  /* Animación de parpadeo para las estrellas */
+  @keyframes parpadeo-montana {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  
+  /* Fondo de estrellas */
+  .fondo-estrellas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #150016, #29104A);
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+/* Estrellas */
+.estrella {
+    position: absolute;
+    width: 5px; /* Aumentado de 3px a 5px */
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: parpadeo 2s infinite alternate;
+  }
+  
+  /* Estrellas fugaces con estela */
+  .estrella-fugaz {
+    position: absolute;
+    width: 4px; /* Tamaño inicial de la estrella fugaz */
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6); /* Estela */
+    opacity: 0.8;
+    animation: fugaz 4s linear infinite;
+  }
+  
+  /* Animaciones */
+  @keyframes parpadeo {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  
+  @keyframes fugaz {
+    0% {
+      transform: translateX(0) translateY(0) scale(1);
+      opacity: 1;
+    }
+    70% {
+      transform: translateX(-150px) translateY(80px) scale(1.5); /* Tamaño aumentado en el recorrido */
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-250px) translateY(120px) scale(0); /* Desaparece al final */
+      opacity: 0;
+    }
+  }
+  
+  
+/* Fondo de playa */
+.fondo-playa {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #522C5D, #845162);
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  /* Arena extendida */
+  .arena {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 200px; /* Altura de la arena */
+    background-color: #E3B6B1;
+    border-radius: 20% 20% 0 0;
+  }
+  
+  /* Agua extendida con movimiento vertical */
+.agua {
+    position: absolute;
+    bottom: -30px; /* Colocada por debajo del borde visible */
+    left: 0;
+    width: 100%;
+    height: 180px; /* Mantiene la altura extendida */
+    background-color: rgba(173, 216, 230, 0.7); /* Color más claro y menos transparente */
+    border-radius: 30% 30% 0 0;
+    animation: moverAgua 2s ease-in-out infinite alternate;
+  }
+  
+  /* Movimiento del agua en dirección vertical (ajustado) */
+  @keyframes moverAgua {
+    0% { transform: translateY(20px); } /* Movemos solo 10px en lugar de 20px */
+    100% { transform: translateY(-20px); }
+  }
+  
+  /* Segunda ola con un color más oscuro */
+.agua2 {
+    position: absolute;
+    bottom: -40px; /* Ubicada más abajo que la primera ola */
+    left: 0;
+    width: 100%;
+    height: 180px;
+    background-color: rgba(100, 149, 237, 0.6); /* Color más oscuro para la segunda ola */
+    border-radius: 30% 30% 0 0;
+    animation: moverAgua2 2.5s ease-in-out infinite alternate; /* Diferente duración para desfasar */
+  }
+  
+  /* Animación de la segunda ola (desfasada) */
+  @keyframes moverAgua2 {
+    0% { transform: translateY(-15px); }
+    100% { transform: translateY(15px); }
+  }
+  
+  
+  /* Estrellas en el cielo */
+  .estrella-playa {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: parpadeo-playa 2s infinite alternate;
+  }
+  
+  .estrella-playa-1 {
+    top: 10%;
+    left: 20%;
+  }
+  
+  .estrella-playa-2 {
+    top: 15%;
+    left: 70%;
+  }
+  
+  @keyframes parpadeo-playa {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  
+  
+ /* Fondo de planetas con un tono más oscuro y estrellas */
+.fondo-planetas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #150016, #29104A);
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  /* Estrellas pequeñas en el fondo */
+  .estrella-espacio {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: parpadeo-espacio 2s infinite alternate;
+  }
+  
+  /* Planetas con textura y rotación */
+  .planeta {
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: rotar 10s linear infinite;
+  }
+  
+  /* Planeta superior con aros */
+  .planeta-1 {
+    width: 80px;
+    height: 80px;
+    background: #FFE3D8;
+    top: 20%;
+    left: 30%;
+    box-shadow: inset -10px -10px 15px rgba(0, 0, 0, 0.61); /* Textura oscura */
+  }
+  
+  /* Primer aro para el planeta superior */
+  .aro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px; /* Tamaño aumentado */
+    height: 150px;
+    border: 2px solid rgba(0, 0, 0, 0.9); /* Borde opaco y grueso */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: girarAros 5s linear infinite;
+  }
+  
+  /* Segundo planeta con textura */
+  .planeta-2 {
+    width: 100px;
+    height: 100px;
+    background: #a2c5f3;
+    top: 60%;
+    left: 70%;
+    box-shadow: inset -15px -15px 20px rgba(0, 0, 0, 0.815); /* Textura oscura */
+  }
+  
+  /* Animación de rotación de los planetas */
+  @keyframes rotar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Animación de giro de los aros */
+  @keyframes girarAros {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  
+/* Parpadeo radiante de las estrellas */
+@keyframes parpadeo-espacio {
+    0% { opacity: 0.3; }          /* Comienza con baja opacidad */
+    25% { opacity: 0.8; }         /* Aumenta a casi completo */
+    50% { opacity: 1; }           /* Punto de máximo brillo */
+    75% { opacity: 0.8; }         /* Baja un poco para un efecto de destello */
+    100% { opacity: 0.3; }        /* Vuelve a baja opacidad */
+  }
+  
+  
+  

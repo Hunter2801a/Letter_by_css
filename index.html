@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Un regalo para ti</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <!-- Pantalla de inicio -->
+  <div class="pantalla pantalla-inicio active">
+    <h1>Un regalo para ti</h1>
+    <p>Lee esto cada vez que este lejos</p>
+    <button onclick="mostrarPantalla(1)">Iniciar</button>
+  </div>
+
+  <div class="pantalla pantalla-1">
+    <div class="fondo-montañas">
+      <!-- Estrellas en el fondo -->
+      <div class="estrella-montana" style="top: 10%; left: 20%;"></div>
+      <div class="estrella-montana" style="top: 15%; left: 80%;"></div>
+      <div class="estrella-montana" style="top: 30%; left: 40%;"></div>
+      <div class="estrella-montana" style="top: 50%; left: 60%;"></div>
+      <div class="estrella-montana" style="top: 70%; left: 25%;"></div>
+      <div class="estrella-montana" style="top: 80%; left: 75%;"></div>
+  
+      <!-- Montañas con efecto de nieve -->
+      <div class="montana montana-1">
+        <div class="punta-nieve"></div> <!-- Punta de nieve para montaña 1 -->
+      </div>
+      <div class="montana montana-2">
+        <div class="punta-nieve"></div> <!-- Punta de nieve para montaña 2 -->
+      </div>
+      <div class="montana montana-3">
+        <div class="punta-nieve"></div> <!-- Punta de nieve para montaña 3 -->
+      </div>
+    </div>
+    <div class="texto">
+      <p>Estaba viendo videos o jugando en mi telefono</p>
+      <p>Cuando salgo al inicio y veo tu carita</p>
+    </div>
+    <button onclick="mostrarPantalla(2)">Continuar</button>
+  </div>
+  
+
+  <div class="pantalla pantalla-2">
+    <div class="fondo-estrellas">
+      <!-- Estrellas parpadeantes -->
+      <div class="estrella" style="top: 20%; left: 30%;"></div>
+      <div class="estrella" style="top: 40%; left: 70%;"></div>
+      <div class="estrella" style="top: 10%; left: 20%;"></div>
+      <div class="estrella" style="top: 60%; left: 80%;"></div>
+      <div class="estrella" style="top: 50%; left: 40%;"></div>
+      
+      <!-- Estrellas fugaces -->
+      <div class="estrella-fugaz" style="top: 10%; left: 90%;"></div>
+      <div class="estrella-fugaz" style="top: 20%; left: 80%;"></div>
+      <div class="estrella-fugaz" style="top: 30%; left: 95%;"></div>
+      <div class="estrella-fugaz" style="top: 40%; left: 85%;"></div>
+      <div class="estrella-fugaz" style="top: 50%; left: 75%;"></div>
+    </div>
+    <div class="texto">
+      <p>Me enamoré al verla</p>
+      <p>Pensé en maneras de decirte cuánto te amo</p>
+    </div>
+    <button onclick="mostrarPantalla(3)">Continuar</button>
+  </div>
+  
+
+  <div class="pantalla pantalla-3">
+    <div class="fondo-playa">
+      <div class="arena"></div>
+      <div class="agua"></div>
+      <div class="agua2"></div> <!-- Segunda ola añadida aquí -->
+      <div class="estrella-playa estrella-playa-1"></div>
+      <div class="estrella-playa estrella-playa-2"></div>
+    </div>
+    <div class="texto">
+      <p>Me puse a escribir</p>
+      <p>Pero solo pensaba en lo hermosa que eres</p>
+    </div>
+    <button onclick="mostrarPantalla(4)">Continuar</button>
+  </div>
+  
+
+  <!-- Escena 4 (Final): Planetas -->
+  <div class="pantalla pantalla-4">
+    <div class="fondo-planetas">
+      <!-- Estrellas en el fondo -->
+      <div class="estrella-espacio" style="top: 10%; left: 20%;"></div>
+      <div class="estrella-espacio" style="top: 15%; left: 80%;"></div>
+      <div class="estrella-espacio" style="top: 30%; left: 40%;"></div>
+      <div class="estrella-espacio" style="top: 50%; left: 60%;"></div>
+      <div class="estrella-espacio" style="top: 70%; left: 25%;"></div>
+      <div class="estrella-espacio" style="top: 80%; left: 75%;"></div>
+  
+      <!-- Planetas -->
+      <div class="planeta planeta-1">
+        <div class="aro"></div> <!-- Aros de estrellas para el planeta 1 -->
+      </div>
+      <div class="planeta planeta-2"></div>
+    </div>
+    <div class="texto">
+      <p>Así que te hice este corazoncito (ahora con codigo jaja)</p>
+      <p>Te amo mucho ❤</p>
+    </div>
+    <button onclick="mostrarPantalla(0)">Volver al inicio</button>
+  </div>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
